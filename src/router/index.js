@@ -1,7 +1,7 @@
 
 import { createRouter, createWebHistory } from 'vue-router';
 import Home from '../views/Home.vue';
-import PageNotFound from '@/views/Page404.vue';
+import NotFound from '@/views/Page404.vue';
 
 const routes = [
   {
@@ -12,7 +12,7 @@ const routes = [
   {
     path: '/:pathMatch(.*)*',
     name: 'NotFound',
-    component: PageNotFound
+    component: NotFound
   },
 
 ];

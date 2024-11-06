@@ -14,8 +14,9 @@
         <p id="A propos">A propos de moi</p>
       </div>
       <div class="texte2">
-        <p>J'ai 43 ans, je suis en concubinage depuis plus de 23 ans,<br/> nous avons un enfant de 15 ans.
-        Je m'interesse à tous se qui touche de près ou de loin à l'informatique depuis tout petit.<br/>
+        <p>J'ai 43 ans, je suis en concubinage depuis plus de 23 ans,<br/>
+        nous avons un enfant de 15 ans. Depuis tout petit,<br/>
+        Je m'interesse à tous se qui touche de près ou de loin à l'informatique.<br/>
         Je suis passionné des jeux "Paradox", "EA", ect...<br/>
         Je viens de commencer une formation développeur Web il y a 3 mois.</p>
       </div>
@@ -136,18 +137,19 @@
     justify-content: center;
     text-align: center;
     width: 100%;
+    height: 400px;
     margin: 10px auto;
     margin-bottom: 50px;
   }
 
   .texte1{
-    padding: 50px;
+    padding: 80px;
     font-size: 1.5rem;
     font-weight: 700;
   }
 
   .texte2{
-    padding: 60px 120px 0 60px;
+    padding: 80px;
     font-size: 1rem;
     display: flex;
     flex-direction: column;
