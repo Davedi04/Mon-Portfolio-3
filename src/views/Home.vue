@@ -14,11 +14,7 @@
         <p id="A propos">A propos de moi</p>
       </div>
       <div class="texte2">
-        <p>J'ai 43 ans, je suis en concubinage depuis plus de 23 ans,<br/>
-        nous avons un enfant de 15 ans. Depuis tout petit,<br/>
-        Je m'interesse à tous se qui touche de près ou de loin à l'informatique.<br/>
-        Je suis passionné des jeux "Paradox", "EA", ect...<br/>
-        Je viens de commencer une formation développeur Web il y a 3 mois.</p>
+        <p>Le trois septembre, à dix heures du soir, un gendarme réveilla tout Verrières en montant la grande rue au galop ; il apportait la nouvelle que Sa Majesté le roi de arrivait le dimanche suivant, et l’on était au mardi. Le préfet autorisait, c’est-à-dire demandait la formation d’une garde d’honneur ; il fallait déployer toute la pompe possible. Une estafette fut expédiée à Vergy. M. de Rênal arriva dans la nuit, et trouva toute la ville en émoi. Chacun avait ses prétentions ; les moins affairés louaient des balcons pour voir l’entrée du roi.</p>
       </div>
     </div>
 
@@ -135,7 +131,6 @@
   .présentation{
     display: flex;
     justify-content: center;
-    text-align: center;
     width: 100%;
     height: 400px;
     margin: 10px auto;
@@ -143,6 +138,7 @@
   }
 
   .texte1{
+    text-align: center;
     padding: 80px;
     font-size: 1.5rem;
     font-weight: 700;
