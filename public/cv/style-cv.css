@@ -1,0 +1,130 @@
+@font-face {
+  font-family: "Raleway";
+  src: url("../fonts/Raleway-Bold.ttf") format("truetype");
+  src: url("../fonts/Raleway-Italic.ttf") format("truetype");
+  src: url("../fonts/Raleway-Regular.ttf") format("truetype");
+}
+
+.lato-regular {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+body {
+  font-family: "Raleway";
+  margin-left: auto;
+  margin-right: auto;
+  width: 1160px;
+  height: 1580px;
+  border-right: 3px solid black;
+}
+h1 {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  width: 1160px;
+  height: 50px;
+}
+h2 {
+  font-family: "Lato";
+  background: #dbc2a4;
+}
+header {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  width: 1160px;
+  height: 370px;
+  position: relative;
+  background-color: #782221;
+  color: #dbc2a4;
+}
+#flex-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 1160px;
+  height: 300px;
+}
+address {
+  display: flex;
+  justify-content: space-around;
+  width: 1160px;
+  height: auto;
+}
+address:hover {
+  text-decoration: underline blue;
+}
+figure {
+  display: flex;
+  justify-content: center;
+  width: auto;
+  height: 150px;
+}
+.photo {
+  border-radius: 50%;
+  box-shadow: 0 0 30px yellow;
+}
+.photo:hover {
+  cursor: zoom-in;
+}
+#flex-row {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background: black;
+  color: white;
+  width: 1160px;
+  height: 110px;
+}
+main {
+  width: 1160px;
+  height: 1000px;
+  border-right: 3px solid black;
+}
+.cv-container {
+  text-align: start;
+  display: flex;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas: "left-column right-column";
+  width: 1160px;
+}
+.left-column {
+  text-align: start;
+  background: #782221;
+  width: 300px;
+  height: 1000px;
+  padding: 10px;
+}
+.indent {
+  display: flex;
+  text-indent: 25px;
+  color: #dbc2a4;
+}
+.langues {
+  display: flex;
+  color: #dbc2a4;
+}
+.centres {
+  display: flex;
+  color: #dbc2a4;
+}
+.Expériences {
+  text-align: start;
+  width: 600px;
+  height: 800px;
+  padding: 10px;
+}
+.Expériences:hover {
+  border-right: 5px solid #6d071a;
+}
+footer {
+  text-align: center;
+  background: #782221;
+  height: 160px;
+  width: 1160px;
+  padding: 50px 0px 10px 0px;
+}
+.res:hover {
+  opacity: 50%;
+}

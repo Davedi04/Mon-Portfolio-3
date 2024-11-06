@@ -1,66 +1,67 @@
 <template>
-  <div class="app-container">
-    <header>
-      <MonHeader />
-    </header>
-    <main>
-      <router-view />
-    </main>
-    <footer>
-      <MonFooter />
-    </footer>
+  <div id="app">
+    <MonHeader />
+    <div class="portfolio-container">
+    <router-view />
+    </div>
+    <MonFooter />
   </div>
 </template>
 
 <script>
 import MonFooter from './components/MonFooter.vue';
-import Home from './views/Home.vue';
 import MonHeader from './components/MonHeader.vue';
 
 export default {
   components: {
     MonHeader,
-    Home,
     MonFooter
   }
 };
 </script>
 
 <style scoped>
-  .app-container{
+
+  *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  #app{
     display: flex;
     flex-direction: column;
-    height: 100vh;
-    width: 100vw;
+    min-height: 100vh;
+  }
+
+  .portfolio-container{
+    flex: 1;
+    max-width: 1200px;
+    margin: 0 auto;
     padding: 0;
+    width: 100%;
   }
 
   header{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 150px;
-    width: 100vh;
+    margin: 0;
     padding: 0;
-  }
-
-  main{
-    flex-grow: 1;
-    justify-content: space-around;
-    align-items: center;
-    height: auto;
-    width: 100vh;
-    padding: 0;
-
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background-color: #fff;
   }
 
   footer{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 280px;
-    width: 100vh;
-    padding: 0;
+    background-color: #333;
+    text-align: center;
+    padding: 10px 0;
   }
 
-</style>
+  @media (min-width: 1200px){
+    .portfolio-container{
+      padding: 0 15px;
+    }
+  }
+    </style>

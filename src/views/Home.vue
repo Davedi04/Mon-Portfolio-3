@@ -4,14 +4,14 @@
     <div class="background-container">
       <div class="text-overlay">
         <h1>Desmurger David</h1>
-        <h3>Je suis developpeur web</h3>
+        <p>Je suis developpeur web</p>
       </div>
     </div>
 
     <!--Présentation-->
     <div class="présentation">
       <div class="texte1">
-        <h2 id="A propos">A propos de moi</h2>
+        <p id="A propos">A propos de moi</p>
       </div>
       <div class="texte2">
         <p>J'ai 43 ans, je suis en concubinage depuis plus de 23 ans,<br/> nous avons un enfant de 15 ans.
@@ -26,51 +26,78 @@
       <h2 id="Compétences">Compétences</h2>
       <div class="flex">
         <div class="box skill">
-          <img src="/src/assets/img/img-html.png">
+          <img src="/src/assets/img/img-html.png" alt="HTML">
           <h3>HTML</h3>
         </div>
         <div class="box skill">
-          <img src="/src/assets/img/img-css.jpg">
+          <img src="/src/assets/img/img-css.jpg" alt="CSS">
           <h3>CSS</h3>
         </div>
         <div class="box skill">
-          <img src="/src/assets/img/img-js.png">
+          <img src="/src/assets/img/img-js.png" alt="JavaScript">
           <h3>JS</h3>
         </div>
       </div>
     </div>
 
-    <!--Réalisations-->
+    <!-- Réalisations -->
     <div class="column2">
       <h2 id="Mes Réalisations">Mes Réalisations</h2>
       <div class="flex2">
-        <div class="box skill2">
-          <a href="">
-            <img src="/src/assets/img/cv.jpg" alt="">
-            <h3>Mon cv</h3>
-          </a>
-        </div>
-        <div class="box skill2">
-          <a href="">
-            <img src="/src/assets/img/cdc.jpg" alt="">
-            <h3>Cahier des charges</h3>
-          </a>
-        </div>
-        <div class="box skill2">
-          <a href="">
-            <img src="/src/assets/img/Duec.png" alt="">
-            <h3>Dynamiser un espace commentaire</h3>
-          </a>
+        <div class="box skill2" v-for="creation in creations" :key="creation.id" :class="creation-item">
+          <img :src="creation.image" @click="openModal(creation)" alt="Image de la réalisations" />
+          <h3>{{ creation.title }}</h3>
         </div>
       </div>
+      <Modal :show="showModal" :data="selectedCreation" @close="showModal = false" />
     </div>
   </main>
 </template>
 
 <script>
-  export default{
-    name: 'Home',
-  };
+  import Modal from "./Modal.vue";
+
+  export default {
+  components: { Modal },
+  data() {
+    return {
+      showModal: false,
+      selectedCreation: {},
+      creations: [
+        {
+          id: 1,
+          title: "Mon CV",
+          image: "/src/assets/img/cv.jpg",
+          description: "Mon parcours professionnel et mes compétences.",
+          type: "Mon_cv",
+          cvUrl: "/cv/index-cv.html"
+        },
+        {
+          id: 2,
+          title: "Cahier des charges",
+          image: "/src/assets/img/cdc.jpg",
+          description: "Description de mon cahier des charges.",
+          type: "Cahier_des_charges",
+          cvUrl: "/cahier/Cahier%20des%20charges.pdf"
+        },
+        {
+          id: 3,
+          title: "Dynamiser un espace commentaire",
+          image: "/src/assets/img/Duec.png",
+          description: "Projet de dynamisation de commentaires.",
+          type: "Dynamiser_un_espace_commentaire",
+          cvUrl: "/dynamiser/index.html"
+        }
+      ]
+    };
+  },
+  methods: {
+    openModal(creation) {
+      this.selectedCreation = creation;
+      this.showModal = true;
+    }
+  }
+};
 </script>
 
 <style>
@@ -80,33 +107,27 @@
   .background-container{
     position: relative;
     width: 100%;
-    height: 500px;
+    height: 400px;
     background-image: url('/src/assets/img/slider2.jpg');
     background-size: cover;
     background-position: center;
-    filter:brightness( 60%);
+    filter:brightness( 0.5);
+    margin: 0;
   }
+
   .text-overlay{
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    color: white;
     text-align: center;
+    color: #fff;
     padding: 20px;
   }
 
-  h1{
+  .text-overlay h1{
     font-size: 3rem;
-  }
-
-  h2{
-    font-size: 1.8rem;
-    font-weight: bold;
-  }
-
-  h3{
-    font-size: 1.2rem;
+    text-shadow: 2px 2px 4px #000;
   }
 
 /* A propos */
@@ -115,19 +136,22 @@
     justify-content: center;
     text-align: center;
     width: 100%;
-    margin: 20px 0;
+    margin: 10px auto;
+    margin-bottom: 50px;
   }
 
   .texte1{
     padding: 50px;
+    font-size: 1.5rem;
+    font-weight: 700;
   }
 
   .texte2{
+    padding: 60px 120px 0 60px;
+    font-size: 1rem;
     display: flex;
-    text-align: left;
-    padding-left: 120px;
-    padding-right: 60px;
-    padding-top: 50px;
+    flex-direction: column;
+    align-items: flex-start;
   }
 
 /* Compétences */
@@ -137,39 +161,31 @@
     background-color: #333;
     color: #fff;
     text-align: center;
-    padding: 10px;
+    padding: 20px;
   }
 
   .flex{
     display: flex;
-    flex-direction: row;
     justify-content: space-around;
-    text-align: center;
-    background-color: #333;
-    color: #fff;
-    text-align: center;
     padding: 10px;
   }
 
   .box{
-    border: 2px solid black;
-    border-radius: 0%;
-    padding: 10px;
-    text-align: center;
+    border: 1px solid #666;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: ceter;
   }
 
   .skill{
     background: #fff;
-    border-radius: 15px;
-    padding: 30px;
-    box-sizing: border-box;
+    border-radius: 25px;
     color: #000;
   }
 
   .skill img{
     width: 100px;
-    height: 100px;
-    aspect-ratio: 1/1;
+    height: 60px;
     object-fit: contain;
   }
 
@@ -181,33 +197,65 @@
     text-align: center;
     background-color: #fff;
     color: #000;
-    padding: 10px;
+    padding: 50px;
   }
 
   .flex2{
     display: flex;
-    align-items: center;
-    padding: 50px;
+    justify-content: space-around;
+    padding: 20px;
   }
 
   .skill2{
     display: flex;
+    flex-direction: column;
+    align-items: center;
     justify-content: center;
     background: #333;
-    border-radius: 10px;
-    width: 250px;
+    color: #fff;
+    border-radius: 25px;
+    width: 240px;
     height: 220px;
-    padding: 5px;
-    box-sizing: border-box;
-    color: #000;
+    padding: 30px;
+    margin: 20px;
   }
 
   .skill2 img{
     width: 100px;
-    height: 100px;
-    aspect-ratio: 1/1;
+    height: 120px;
     object-fit: contain;
   }
 
+  .creation-item{
+    cursor: pointer;
+    margin: 20px;
+    text-align: center;
+  }
+
+  .creation-item img{
+    width: 150px;
+    height: auto;
+    border-radius: 8px;
+  }
+
+  .skill2 h3{
+    margin-top: 90px;
+  }
+
+  @media (max-width: 768px) {
+    .text2 {
+      padding: 20px;
+    }
+
+    .flex, .flex2 {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .skill2{
+      width: 90%;
+      margin-bottom: 20px;
+    }
+  }
 
 </style>

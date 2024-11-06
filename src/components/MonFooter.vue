@@ -1,5 +1,5 @@
 <template>
-  <footer class="footer">
+  <footer class="container">
     <h2 id="Contactez-moi">Contactez-moi</h2>
     <div class="flexfooter">
       <div class="box2 inbox2">
@@ -25,7 +25,7 @@
     </div>
 
     <div class="update-date">
-      <p>Dernière mise à jour : <span id="date"></span></p>
+      <p>Dernière mise à jour : <span>{{ formattedDate }}</span></p>
     </div>
 
   </footer>
@@ -36,20 +36,20 @@
 
   export default {
     name: 'MonFooter',
+    data() {
+      return {
+        formattedDate:''
+      };
+    },
+    mounted() {
+      const today = new Date();
+      this.formattedDate = today.toLocaleDateString("fr-Fr", {
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric'
+      });
+    }
   };
-
-  window.onload = function() {
-    const dateElement = document.getElementById("date");
-    const today = new Date();
-    const formattedDate = today.toLocaleDateString("fr-FR", {
-      year: 'numeric',
-      month: 'long',
-      day: 'numeric'
-    });
-
-    dateElement.
-    textContent = formattedDate;
-    };
 
 </script>
 
