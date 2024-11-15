@@ -1,11 +1,13 @@
 <template>
   <header class="header">
     <div class="container">
+      <!-- logo -->
       <img src="/src/assets/img/D.png" class="logo" alt="Logo" @click="scrollToTop">
       <button class="menu-toggle" @click="toggleMenu">
         <span class="material-icons" v-if="!menuOpen">menu</span>
         <span class="material-icons" v-else>close</span>
       </button>
+      <!-- menu -->
       <nav class="{ menu: true, open: menuOpen }">
         <ul>
           <li><a href="#A propos">A propos</a></li>

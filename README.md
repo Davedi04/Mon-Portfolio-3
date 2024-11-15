@@ -1,28 +1,28 @@
-# Mon Portfolio 3
+# Mon Portfolio
 
-This template should help get you started developing with Vue 3 in Vite.
+Modèle pour démarrer avec vue 3.
 
-## Recommended IDE Setup
+## Configuration IDE recommandée
 
 [VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
 
-## Customize configuration
+## Personnaliser la configuration
 
 See [Vite Configuration Reference](https://vite.dev/config/).
 
-## Project Setup
+## Configuration du projet
 
 ```sh
 npm install
 ```
 
-### Compile and Hot-Reload for Development
+### Voir mon site
 
 ```sh
 npm run dev
 ```
 
-### Compile and Minify for Production
+### Compiler et réduire pour la production
 
 ```sh
 npm run build

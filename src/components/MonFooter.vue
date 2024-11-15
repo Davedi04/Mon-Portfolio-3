@@ -1,4 +1,5 @@
 <template>
+  <!-- Contact -->
   <footer class="container">
     <h2 id="Contactez-moi">Contactez-moi</h2>
     <div class="flexfooter">
@@ -24,6 +25,7 @@
       </div>
     </div>
 
+    <!-- Mise à jour -->
     <div class="update-date">
       <p>Dernière mise à jour : <span>{{ formattedDate }}</span></p>
     </div>

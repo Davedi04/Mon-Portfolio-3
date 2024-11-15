@@ -222,6 +222,8 @@
     width: 100px;
     height: 120px;
     object-fit: contain;
+    box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.9);
+    cursor: pointer;
   }
 
   .creation-item{
